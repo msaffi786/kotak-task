@@ -10,13 +10,12 @@ export default function PostDetail() {
   );
 
   if (isLoading) {
-    return  (<>
-    <Spinner animation="border" />
-    <span>
-      
-Loading...
-    </span>
-    </>);
+    return (
+      <>
+        <Spinner animation="border" />
+        <span>Loading...</span>
+      </>
+    );
   }
 
   if (error) {
@@ -41,7 +40,9 @@ Loading...
             {data.children &&
               data.children.map((comment) => (
                 <Card className="mb-2 w-40" key={comment.id}>
-                  <Card.Body dangerouslySetInnerHTML={{ __html: comment.text }}></Card.Body>
+                  <Card.Body
+                    dangerouslySetInnerHTML={{ __html: comment.text }}
+                  ></Card.Body>
                 </Card>
               ))}
           </Row>
@@ -50,5 +51,3 @@ Loading...
     </>
   );
 }
-
-

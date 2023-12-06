@@ -1,15 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Container,
-  Navbar,
-  Nav,
-} from "react-bootstrap";
-
+import { Container, Navbar, Nav } from "react-bootstrap";
 
 export default function CustomNavbar() {
-  
-
   return (
     <>
       <Navbar sticky="top" className="bg-body-tertiary">
@@ -24,5 +17,3 @@ export default function CustomNavbar() {
     </>
   );
 }
-
-

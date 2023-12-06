@@ -58,11 +58,8 @@ export default function SearchNews() {
           <Col xs="auto">
             {loading && (
               <>
-              <Spinner animation="border" />
-              <span>
-                
-      Loading...
-              </span>
+                <Spinner animation="border" />
+                <span>Loading...</span>
               </>
             )}
             {error && <div>{error}</div>}
