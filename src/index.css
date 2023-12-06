@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+/* Custom padding for small devices (sm breakpoint and smaller) */
+@media (max-width: 576px) {
+  .mobile {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
