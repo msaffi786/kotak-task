@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Card, Container, Row, Col } from "react-bootstrap";
+import NewsContext from "../contexts/NewsContext";
 
-export default function NewsList({ results }) {
+export default function NewsList() {
+  const { results } = useContext(NewsContext);
   return (
     <Container>
       <Row className="mt-5">

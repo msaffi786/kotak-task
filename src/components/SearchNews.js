@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { Container, Row, Form, Button, Col, Spinner } from "react-bootstrap";
-import NewsList from "./NewsList";
+import React, { useState, useEffect, useContext } from "react";
+import { Container, Row, Form, Col, Spinner } from "react-bootstrap";
+import NewsContext from "../contexts/NewsContext";
 
 export default function SearchNews() {
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState([]);
+  const { setResults } = useContext(NewsContext);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -40,7 +40,7 @@ export default function SearchNews() {
     }, 500); // Debounce to avoid rapid API requests on each keystroke
 
     return () => clearTimeout(delayDebounceFn);
-  }, [query]);
+  }, [query, setResults]);
 
   return (
     <Container>
@@ -66,7 +66,6 @@ export default function SearchNews() {
           </Col>
         </Row>
       </Form>
-      <NewsList results={results} />
     </Container>
   );
 }
